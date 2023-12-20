@@ -1,0 +1,6 @@
+{
+  "/not-found": "app/not-found.js",
+  "/(start)/last-sales/page": "app/(start)/last-sales/page.js",
+  "/(start)/page": "app/(start)/page.js",
+  "/(start)/user/page": "app/(start)/user/page.js"
+}

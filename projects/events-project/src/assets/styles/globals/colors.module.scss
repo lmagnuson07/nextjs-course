@@ -1,0 +1,13 @@
+$grey: #666666;
+$white: #ffffff;
+$black: #000000;
+$offBlack2: rgba(0, 0, 0, 0.2);
+$offBlack3: rgba(0, 0, 0, 0.3);
+
+:export {
+  grey: $grey;
+  white: $white;
+  black: $black;
+  offBlack2: $offBlack2;
+  offBlack3: $offBlack3;
+}

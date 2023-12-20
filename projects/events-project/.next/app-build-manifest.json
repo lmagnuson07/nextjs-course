@@ -1,0 +1,40 @@
+{
+  "pages": {
+    "/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/not-found.css",
+      "static/chunks/app/not-found.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/(start)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(start)/page.css",
+      "static/chunks/app/(start)/page.js"
+    ],
+    "/(start)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(start)/layout.css",
+      "static/chunks/app/(start)/layout.js"
+    ],
+    "/(start)/events/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(start)/events/page.css",
+      "static/chunks/app/(start)/events/page.js"
+    ],
+    "/(start)/events/[eventid]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(start)/events/[eventid]/page.css",
+      "static/chunks/app/(start)/events/[eventid]/page.js"
+    ]
+  }
+}
