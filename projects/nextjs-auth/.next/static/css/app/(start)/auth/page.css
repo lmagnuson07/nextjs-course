@@ -1,0 +1,68 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/auth/auth-form.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.auth-form_auth__8epkU {
+  margin: 3rem auto;
+  width: 95%;
+  max-width: 25rem;
+  border-radius: 6px;
+  background-color: #38015c;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  text-align: center;
+}
+.auth-form_auth__8epkU h1 {
+  text-align: center;
+  color: white;
+}
+
+.auth-form_control__qJFps {
+  margin-bottom: 0.5rem;
+}
+.auth-form_control__qJFps label {
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.auth-form_control__qJFps input {
+  font: inherit;
+  background-color: #f1e1fc;
+  color: #38015c;
+  border-radius: 4px;
+  border: 1px solid white;
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem;
+}
+
+.auth-form_actions__DCmgv {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.auth-form_actions__DCmgv button {
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: #9f5ccc;
+  border: 1px solid #9f5ccc;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}
+.auth-form_actions__DCmgv button:hover {
+  background-color: #ae82cc;
+  border-color: #ae82cc;
+}
+.auth-form_actions__DCmgv .auth-form_toggle__I_ZDT {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #9f5ccc;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+.auth-form_actions__DCmgv .auth-form_toggle__I_ZDT:hover {
+  background-color: transparent;
+  color: #ae82cc;
+}

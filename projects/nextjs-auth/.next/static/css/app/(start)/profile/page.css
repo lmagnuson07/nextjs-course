@@ -1,0 +1,54 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/profile/profile-form.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.profile-form_form__9ffnB {
+  width: 95%;
+  max-width: 25rem;
+  margin: 2rem auto;
+}
+
+.profile-form_control__YSy62 {
+  margin-bottom: 0.5rem;
+}
+.profile-form_control__YSy62 label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #353336;
+  display: block;
+}
+.profile-form_control__YSy62 input {
+  display: block;
+  font: inherit;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #38015c;
+  padding: 0.25rem;
+  background-color: #f7f0fa;
+}
+
+.profile-form_action__q09V4 {
+  margin-top: 1.5rem;
+}
+.profile-form_action__q09V4 button {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  background-color: #38015c;
+  color: white;
+  border: 1px solid #38015c;
+}
+.profile-form_action__q09V4 button:hover {
+  background-color: #540d83;
+  border-color: #540d83;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/profile/user-profile.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.user-profile_profile__2pt_L {
+  margin: 3rem auto;
+  text-align: center;
+}
+.user-profile_profile__2pt_L h1 {
+  font-size: 5rem;
+}
