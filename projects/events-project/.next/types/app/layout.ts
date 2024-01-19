@@ -1,4 +1,4 @@
-// File: C:\Users\logma\OneDrive - NAIT\Documents\Next.js Course\projects\events-project\app\layout.tsx
+// File: C:\Users\logma\Documents\GitHub\nextjs-course\projects\events-project\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
