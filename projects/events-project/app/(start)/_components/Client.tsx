@@ -15,9 +15,14 @@ export default function Client() {
     message: '',
     status: '',
   };
+  // Check if all properties are empty
+  const isNotificationEmpty =
+    activeNotification?.title === '' &&
+    activeNotification?.message === '' &&
+    activeNotification?.status === '';
   return (
     <>
-      {activeNotification && (
+      {!isNotificationEmpty && (
         <Notification
           title={activeNotification.title}
           message={activeNotification.message}

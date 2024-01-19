@@ -4,7 +4,15 @@ import { z } from 'zod';
 import { revalidatePath } from 'next/cache';
 import { MongoClient } from 'mongodb';
 
-export async function registrationHandler(prevState: any, formData: FormData) {
+interface RegistrationResult {
+  message: string;
+  success: boolean;
+}
+
+export async function registrationHandler(
+  prevState: RegistrationResult,
+  formData: FormData
+) {
   const schema = z.object({
     email: z.string().email().min(1, 'Email required'),
   });
@@ -17,7 +25,8 @@ export async function registrationHandler(prevState: any, formData: FormData) {
     const error = parsedData.error.format();
     const emailMessage: string[] | undefined = error.email?._errors;
     const message: string = `${emailMessage?.join(', ')}`;
-    return { message: message };
+    const returnVal: RegistrationResult = { message: message, success: false };
+    return returnVal;
   } else {
     // revalidatePath('/');
     const url =
@@ -26,14 +35,19 @@ export async function registrationHandler(prevState: any, formData: FormData) {
     await client.connect();
     const db = client.db('events');
 
-    await db.collection('emails').insertMany([
-      {
-        email: parsedData.data.email,
-      },
-    ]);
+    try {
+      await db.collection('emails').insertMany([
+        {
+          email: parsedData.data.email,
+        },
+      ]);
+    } catch (err) {
+      console.log(err);
+    }
     await client.close();
     return {
       message: 'Success registered with email: ' + parsedData.data.email + '!',
+      success: true,
     };
   }
 }

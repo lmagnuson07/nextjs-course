@@ -6,7 +6,8 @@ import {
   commentHandler,
   getComments,
 } from '@/src/components/input/comment-submission';
-import { useEffect } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import NotificationContext from '@/src/store/notification-context';
 
 const initialState: {
   email: string | undefined;
@@ -23,13 +24,48 @@ const initialState: {
 };
 
 export default function NewComment(props: any) {
+  const [pending, setPending] = useState(false);
   const { eventId, setComments } = props;
   const [state, formAction] = useFormState(commentHandler, initialState);
+  const context = useContext(NotificationContext);
+  const contextRef = useRef(context);
+
+  function pendingNotification() {
+    if (state?.comment && state?.email && state?.name) {
+      setPending(true);
+      contextRef.current.showNotification({
+        title: 'Signing up...',
+        message: 'Signing up...',
+        status: 'pending',
+      });
+    }
+  }
+
   useEffect(() => {
     (async () => {
-      const response = await getComments(eventId);
-      // @ts-ignore
-      setComments(response);
+      console.log(state);
+      if (!state?.comment || !state?.email || !state?.name) {
+        setPending(false);
+      } else {
+        if (state?.success) {
+          setPending(false);
+          contextRef.current.showNotification({
+            title: 'Comment added',
+            message: 'Thanks for your input!',
+            status: 'success',
+          });
+        } else if (!state?.success) {
+          setPending(false);
+          contextRef.current.showNotification({
+            title: 'Error adding your comment',
+            message: 'Sorry there was an error adding your comment.',
+            status: 'error',
+          });
+        }
+        const response = await getComments(eventId);
+        // @ts-ignore
+        setComments(response);
+      }
     })();
   }, [setComments, eventId, state]);
 
@@ -51,6 +87,7 @@ export default function NewComment(props: any) {
         <textarea name="comment" id="comment" rows={5}></textarea>
       </div>
       <p>{state?.eventId}</p>
+      {pending && <p>Pending...</p>}
       {state?.success ?
         <p>Success!</p>
       : <>
@@ -59,7 +96,7 @@ export default function NewComment(props: any) {
           <p>{state?.comment}</p>
         </>
       }
-      <Button>
+      <Button onClick={() => pendingNotification()}>
         <span>Submit</span>
       </Button>
     </form>

@@ -7,27 +7,42 @@ import SubmitButton from '@/src/components/input/NewsletterButton';
 import NotificationContext from '@/src/store/notification-context';
 import { useContext, useEffect, useRef, useState } from 'react';
 
-const initialState: { message: string | null } = {
-  message: null,
+type registrationState = {
+  message: string;
+  success: boolean;
+};
+const initialState: registrationState = {
+  message: '',
+  success: false,
 };
 export default function NewsletterRegistration() {
   const [pending, setPending] = useState(false);
-  const [state, formAction] = useFormState(registrationHandler, initialState);
+  const [state, formAction] = useFormState<registrationState>(
+    registrationHandler,
+    initialState
+  );
   const context = useContext(NotificationContext);
   const contextRef = useRef(context);
-
   useEffect(() => {
+    if (state.message == '') {
+      return;
+    }
     if (state.message) {
       contextRef.current.showNotification({
         title: 'Signed up',
         message: state.message,
         status: 'success',
       });
+    } else {
+      contextRef.current.showNotification({
+        title: 'Error',
+        message: 'Error',
+        status: 'error',
+      });
     }
   }, [state]);
 
   function pendingNotification() {
-    console.log('pending');
     contextRef.current.showNotification({
       title: 'Signing up...',
       message: 'Signing up...',
@@ -52,6 +67,7 @@ export default function NewsletterRegistration() {
         </div>
       </form>
       <p>{state?.message}</p>
+      <p>{state?.success}</p>
     </section>
   );
 }
